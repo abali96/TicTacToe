@@ -4,20 +4,34 @@ $(document).ready(function () {
   //   $(this).toggleClass("unfilled filled");
   // };
 
-  $("#top-left").one("click", function () {
-    $("<p>X</p>").appendTo('#top-left');
-    $(this).toggleClass("unfilled filled");
-  });
+var i = 0
+var xo = ""
 
-  $("#top-center").one("click", function () {
-    $("<p>X</p>").appendTo('#top-center');
-    $(this).toggleClass("unfilled filled");
-  });
+  function xoxo() {
+    if (i%2 == 0) {
+    xo = "<p>X</p>"
+    } else {
+    xo = "<p>O</p>"
+    }
+    i += 1
+  }
 
-  $("#top-right").one("click", function () {
-    $("<p>X</p>").appendTo('#top-right');
-    $(this).toggleClass("unfilled filled");
-  });
+  function play(id) {
+    $(id).one("click", function () {
+      xoxo();
+      $(xo).appendTo(id);
+      $(this).toggleClass("unfilled filled");
+    });
+  }
 
+play("#top-left")
+play("#top-center")
+play("#top-right")
+play("#middle-left")
+play("#middle-center")
+play("#middle-right")
+play("#bottom-left")
+play("#bottom-center")
+play("#bottom-right")
 
 });
