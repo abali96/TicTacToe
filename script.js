@@ -20,7 +20,6 @@ $(document).ready(function () {
     victory = true;
     if ( $(".left").text() === "XXX" || $(".right").text()  === "XXX" ||  $(".center").text() === "XXX") {
       $("#help-text").text("X wins!");
-      victory = true;
     } else if ($(".bottom").text() === "XXX" || $(".middle").text() === "XXX" || $(".top").text() === "XXX") {
       $("#help-text").text("X wins!")
     } else if ($(".left").text() === "OOO" || $(".right").text()  === "OOO" ||  $(".center").text() === "OOO") {
@@ -35,32 +34,29 @@ $(document).ready(function () {
       $("#help-text").text("X wins!")
     } else if ( $("#bottom-left > p").text() === "O" && $("#top-right > p").text() === "O" && $("#middle-center > p").text() === "O" ){
       $("#help-text").text("O wins!")
-    } else {
+    }
+    else if ($("td").find("p").text().length === 9 ){
+      $("#help-text").text("It's a tie!");
+    }
+    else {
       victory = false;
     }
   }
 
-  function play(id) {
-    $(id).on("click", function () {
-      if ($(id).find("p").text() === "") {
+  function play() {
+    $('td').on("click", function () {
+      if ($(this).find("p").text() === "") {
         xoxo();
-        $(xo).appendTo(id);
+        $(xo).appendTo($(this));
       } else {
-        $(id).off();
+        $(this).off("click");
       }
       console.log(xo);
       win();
-      new_game();
       if (victory) {
         $("td").off("click");
       }
     });
-  }
-
-  function new_game() {
-    if (victory == false) {
-      console.log("Keep playing");
-    }
   }
 
   function restart() {
@@ -68,18 +64,10 @@ $(document).ready(function () {
     $("p").empty().remove();
     xo = "<p style='color: white;'>Begin!</p>";
     $("#help-text").text("Begin!");
+    play();
   }
 
-  play("#top-left");
-  play("#top-center");
-  play("#top-right");
-  play("#middle-left");
-  play("#middle-center");
-  play("#middle-right");
-  play("#bottom-left");
-  play("#bottom-center");
-  play("#bottom-right");
-
+  play();
 
   $('button').click(function() {
     restart();
