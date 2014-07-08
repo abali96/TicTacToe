@@ -1,16 +1,27 @@
+
 * {
   font-family: Helvetica, sans-serif;
+}
+
+p {
+  opacity: 0.8;
 }
 
 table {
   border-collapse: collapse;
   width: 600px;
   height: 600px;
-  margin: 2rem auto;
-
+  margin: 1rem auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  background-color: #85144B;
 }
+
 table, tr, td {
-  border: 1px solid;
+  border: 1px solid white;
 }
 
 td {
@@ -19,7 +30,7 @@ td {
 }
 
 .unfilled:hover {
-  background-color: grey;
+  background-color:  #F012BE;
 }
 
 .filled {
@@ -42,4 +53,12 @@ button {
   margin: 0 auto;
   display: block;
   font-size: 20px;
+}
+
+.autofilled {
+  opacity: 1;
+}
+
+.copyright {
+  text-align: right;
 }
