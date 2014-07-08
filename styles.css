@@ -1,16 +1,45 @@
+* {
+  font-family: Helvetica, sans-serif;
+}
+
 table {
   border-collapse: collapse;
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
+  margin: 2rem auto;
+
 }
 table, tr, td {
   border: 1px solid;
 }
 
 td {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
+
 .unfilled:hover {
   background-color: grey;
+}
+
+.filled {
+  text-align: center;
+  font-size: 60px;
+}
+
+#game-over {
+  background-color: black;
+}
+
+#help-text {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 45px;
+}
+
+button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-size: 20px;
 }
