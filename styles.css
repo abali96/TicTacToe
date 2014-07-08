@@ -27,6 +27,8 @@ table, tr, td {
 td {
   width: 200px;
   height: 200px;
+  text-align: center;
+  font-size: 60px;
 }
 
 .unfilled:hover {

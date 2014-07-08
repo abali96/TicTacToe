@@ -20,6 +20,7 @@ $(document).ready(function () {
     victory = true;
     if ( $(".left").text() === "XXX" || $(".right").text()  === "XXX" ||  $(".center").text() === "XXX") {
       $("#help-text").text("X wins!");
+      victory = true;
     } else if ($(".bottom").text() === "XXX" || $(".middle").text() === "XXX" || $(".top").text() === "XXX") {
       $("#help-text").text("X wins!")
     } else if ($(".left").text() === "OOO" || $(".right").text()  === "OOO" ||  $(".center").text() === "OOO") {
@@ -40,34 +41,33 @@ $(document).ready(function () {
   }
 
   function play(id) {
-    $(id).one("click", function () {
-      xoxo();
-      // if (xo == "<p>O</p>") {
-      //   xo = "<p>X</p>"
-      // } else if (xo == "<p>X</p>") {
-      //   xo = "<p>O</p>"
-      // }
-      $(xo).appendTo(id);
+    $(id).on("click", function () {
+      if ($(id).find("p").text() === "") {
+        xoxo();
+        $(xo).appendTo(id);
+      } else {
+        $(id).off();
+      }
       console.log(xo);
-      $(this).toggleClass("unfilled filled");
-       win();
-       new_game();
+      win();
+      new_game();
+      if (victory) {
+        $("td").off("click");
+      }
     });
   }
 
   function new_game() {
     if (victory == false) {
       console.log("Keep playing");
-    } else {
-      // $("td.unfilled").trigger("click").children().addClass("autofilled");
     }
   }
 
   function restart() {
     i = 0;
-    $("td").addClass("unfilled");
-    $("td").removeClass("filled");
     $("p").empty().remove();
+    xo = "<p style='color: white;'>Begin!</p>";
+    $("#help-text").text("Begin!");
   }
 
   play("#top-left");
@@ -83,16 +83,5 @@ $(document).ready(function () {
 
   $('button').click(function() {
     restart();
-
-      // $("td.unfilled").trigger("click").children().addClass("autofilled");
-    // $("td").addClass("unfilled");
-    // $("td").removeClass("filled");
-    // $("p").empty().remove();
-    // startGame();
-    // while(1) {
-    //   startGame();
-    // }
-
   });
-
 });
