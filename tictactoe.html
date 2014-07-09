@@ -6,22 +6,29 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1 id="help-text">Begin!</h1>
+  <h1 id="help-text">Tic Tac Toe</h1>
+  <h2>X:
+    <span id="win_count_x">0</span>
+  </h2>
+    <h2>O:
+      <span id="win_count_o">0</span>
+    </h2>
+  </h2>
   <table>
     <tr>
-      <td class="top left" id="top-left"></td>
-      <td class="top center" id="top-center"></td>
-      <td class="top right" id="top-right"></td>
+      <td class="hover top left" id="top-left"></td>
+      <td class="hover top center" id="top-center"></td>
+      <td class="hover top right" id="top-right"></td>
     </tr>
     <tr>
-      <td class="middle left" id="middle-left"></td>
-      <td class="middle center" id="middle-center"></td>
-      <td class="middle right" id="middle-right"></td>
+      <td class="hover middle left" id="middle-left"></td>
+      <td class="hover middle center" id="middle-center"></td>
+      <td class="hover middle right" id="middle-right"></td>
     </tr>
     <tr>
-      <td class="bottom left" id="bottom-left"></td>
-      <td class="bottom center" id="bottom-center"></td>
-      <td class="bottom right" id="bottom-right"></td>
+      <td class="hover bottom left" id="bottom-left"></td>
+      <td class="hover bottom center" id="bottom-center"></td>
+      <td class="hover bottom right" id="bottom-right"></td>
     </tr>
   </table>
 
@@ -29,7 +36,7 @@
     <button>New Game</button>
   </div>
 
-  <p class="copyright">&copy; Fruitopia 2014 </p>
+  <p class="copyright">&copy; Fruitopia 2014</p>
 
   <script src="jquery.js"></script>
   <script src="script.js"></script>

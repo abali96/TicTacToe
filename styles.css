@@ -1,6 +1,11 @@
-
 * {
   font-family: Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+body {
+  width: 500px;
+  margin: 2rem auto;
 }
 
 p {
@@ -9,15 +14,15 @@ p {
 
 table {
   border-collapse: collapse;
-  width: 600px;
-  height: 600px;
-  margin: 1rem auto;
+  width: 500px;
+  height: 500px;
+  margin: 0.5rem auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  background-color: #85144B;
+  background-color: #800000;
 }
 
 table, tr, td {
@@ -25,10 +30,10 @@ table, tr, td {
 }
 
 td {
-  width: 200px;
-  height: 200px;
+  width: 166.66666666666666667px;
+  height: 166.66666666666666667px;
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .unfilled:hover {
@@ -38,10 +43,6 @@ td {
 .filled {
   text-align: center;
   font-size: 60px;
-}
-
-#game-over {
-  background-color: black;
 }
 
 #help-text {
@@ -63,4 +64,15 @@ button {
 
 .copyright {
   text-align: right;
+}
+
+.hover:hover {
+  background-color: white;
+  opacity: 0.5;
+}
+
+h2 {
+  text-align: right;
+  margin: 0;
+  padding: 0;
 }
